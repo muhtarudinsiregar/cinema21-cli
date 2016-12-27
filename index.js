@@ -15,4 +15,23 @@ axios.get(baseUrl).then(x =>{
         kota.push({name: y.children[0].data, id: y.children[0].parent.attribs.value});
     });
     return kota
+})
+.then(kota => {
+    return inquirer.prompt([{
+        type    : "list",
+        name    : "kota",
+        message : "Pilih Kota: ",
+        choices : kota
+    }])
+}).then(jawaban => {
+    var id_kota = kota.filter(x => {
+        return x.name === jawaban.kota;
+    }).map(x=>{
+        return x.id;
+    }).toString();
+
+    return axios.get(theaterUrl+id_kota).then(res => {
+        var $ = cheerio.load(res.data);
+        console.log($('#box_content').text());
+    });
 });
