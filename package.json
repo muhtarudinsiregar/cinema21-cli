@@ -1,0 +1,19 @@
+{
+  "name": "cinema21-cli",
+  "version": "1.0.0",
+  "description": "cinema21 learning\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[-cli learning",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "js"
+  ],
+  "author": "muhtarudinsiregar",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.15.3",
+    "cheerio": "^0.22.0",
+    "inquirer": "^2.0.0"
+  }
+}
